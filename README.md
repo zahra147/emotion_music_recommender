@@ -76,6 +76,17 @@ Focal loss
 
 Larger CNN
 
+<<<<<<< HEAD
+| Emotion    | Valence | Arousal |
+| ---------- | ------: | ------: |
+| 😢 Sad     |    منفی |   پایین |
+| 😐 Neutral | نزدیک 0 |   پایین |
+| 😊 Happy   |    مثبت |    بالا |
+| 😠 Angry   |    منفی |    بالا |
+| 😨 Fear    |    منفی |    بالا |
+
+=======
+>>>>>>> 4c621215a5a0d73cf5e86303ed653910a89dcc8a
 Real solution: adding CK+ dataset (balanced, posed expressions)
 
 Results:
