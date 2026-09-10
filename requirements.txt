@@ -1,0 +1,32 @@
+# requirements.txt — نصب با:  pip install -r requirements.txt
+#
+# این نسخه‌ها طی این پروژه تست شدن و مشکلاتشون حل شده:
+#   - tensorflow-cpu روی ویندوز باگ DLL داشت → از tensorflow معمولی استفاده کن
+#     (از نسخه‌ی ۲٫۱۱ به بعد tensorflow معمولی روی ویندوز خودش فقط-CPU است)
+#   - mediapipe نسخه‌های خیلی جدید (1.x) و opencv نسخه‌ی 5.x ناسازگارن با این
+#     کد (API قدیمی face-detection/Haar رو حذف کردن) → نسخه‌های زیر پین شدن.
+
+# --- هسته‌ی اصلی (برای اجرای دمو و تست‌ها لازم است) ---
+tensorflow==2.21.0
+opencv-python-headless==4.10.0.84
+scikit-learn
+h5py
+streamlit
+matplotlib
+seaborn
+pillow
+numpy
+
+# --- اختیاری: برای اجرای نوت‌بوک‌های آموزش مدل (train_*.ipynb) ---
+jupyter
+
+# --- اختیاری: تشخیص چهره‌ی دقیق‌تر (Haar به‌تنهایی هم کار می‌کند) ---
+# mediapipe عمداً این‌جا لیست نشده: نسخه‌ای که با این کد سازگاره
+# (mediapipe==0.10.14) با protobuf مورد نیاز tensorflow به‌طور کامل تعارض
+# دارد و باعث fail شدن کل `pip install -r requirements.txt` می‌شود.
+# کد پروژه بدون mediapipe هم کامل کار می‌کند (خودکار به Haar سوییچ می‌کند)،
+# پس این خط را نصب نکن مگر بخوای خودت دستی امتحانش کنی؛ در آن صورت:
+#   pip install mediapipe==0.10.14 --no-deps
+# (با --no-deps از تلاش pip برای عوض کردن نسخه‌ی protobuf جلوگیری می‌شود،
+#  ولی ممکن است mediapipe موقع اجرا با خطای protobuf کرش کند - اشکالی
+#  ندارد، کد پروژه این حالت را هم تشخیص می‌دهد و به Haar برمی‌گردد.)
